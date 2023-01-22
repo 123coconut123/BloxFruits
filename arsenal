@@ -1,7 +1,7 @@
 local Config = {
-    WindowName = "BatuhanG Hub",
-	Color = Color3.fromRGB(255,128,64),
-	Keybind = Enum.KeyCode.RightControl
+    WindowName = "BatuhanG Hub", -- HUBUN ISMI
+	Color = Color3.fromRGB(255,128,64), -- KULLANACAĞIN RENKLER
+	Keybind = Enum.KeyCode.RightControl -- HUBU AÇIP KAPAMAK İÇİN TUŞ
 }
 
 
@@ -20,7 +20,7 @@ local Name = "Arsenal.txt"
 
 Des = {}
 if makefolder then
-    makefolder("V.G Hub")
+    makefolder("V.G Hub") -- BU HİLEYİ KAYDETMEK İÇİN BUNLARI ATLA ŞİMDİLİK
 end
 
 local Settings
@@ -329,59 +329,59 @@ UserInputService.InputEnded:connect(
 )
 
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/test"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/test"))() -- HİLENİN KULLANDIĞI GÖRÜNÜŞ
 local Window = Library:CreateWindow(Config, game:GetService("CoreGui"))
 
-local Tab1 = Window:CreateTab("Arsenal")
-local Tab2 = Window:CreateTab("UI Settings")
+local Tab1 = Window:CreateTab("Arsenal") -- 1. GUİ SEKMESİNİN İSMİ
+local Tab2 = Window:CreateTab("UI Settings") -- 2. GUİ SEKMESİNİN İSMİ
 
 local Section1 = Tab1:CreateSection("")
-local Section2 = Tab1:CreateSection("")
+local Section2 = Tab1:CreateSection("") -- BUNLAR BİZLE ALAKASI YOK GEREKSİZ
 local Section5 = Tab1:CreateSection("")
 local Section3 = Tab2:CreateSection("Menu")
 local Section4 = Tab2:CreateSection("Background")
 
-local Toggle1 = Section1:CreateToggle("Aimbot", Settings.Aimbot.Enabled, function(State)
+local Toggle1 = Section1:CreateToggle("Aimbot", Settings.Aimbot.Enabled, function(State) -- BU Bİ TOGGLE AİMBOTU AÇIP KAPATABİLMEN İÇİN "AİMBOT" KISMINDAN ADINI DEĞİŞTİRE BİLİRSİN.
     Settings.Aimbot.Enabled = State
 end)
 
 
-local Dropdown1 = Section1:CreateDropdown("HitPart", {"HumanoidRootPart","Head","UpperTorso","LowerTorso","Random"}, function(String)
+local Dropdown1 = Section1:CreateDropdown("HitPart", {"HumanoidRootPart","Head","UpperTorso","LowerTorso","Random"}, function(String) -- BU BİR DROPDOWN DOLAP GİBİ DÜŞÜN TIKLADIĞINDA DOLABI AÇIYOR İÇİNDEKİ EŞYA GİBİ SEÇENEKLERDEN SEÇİYORSUN!
 	Settings.AimPart = String
 end)
 if Settings.AimPart == nil then
 Settings.AimPart = "HumanoidRootPart"
 end 
 
-local Toggle1 = Section1:CreateToggle("FreeForAll", Settings.Aimbot.FreeForAll, function(State)
+local Toggle1 = Section1:CreateToggle("FreeForAll", Settings.Aimbot.FreeForAll, function(State)  -- BU YİNE TOGGLE
     Settings.Aimbot.FreeForAll = State
     Settings.T.TeamCheck = Settings.Aimbot.FreeForAll
 end)
 
-local Toggle1 = Section1:CreateToggle("TriggerBot", Settings.T.Enabled, function(State)
+local Toggle1 = Section1:CreateToggle("TriggerBot", Settings.T.Enabled, function(State) -- TOGGLE
     Settings.T.Enabled = State
 end)
 
-local Toggle1 = Section1:CreateToggle("WallCheck", nil, function(State)
+local Toggle1 = Section1:CreateToggle("WallCheck", nil, function(State) -- TOGGLE
     Settings.Aimbot.WallCheck = State
 end)
 
-local Slider2 = Section1:CreateSlider("Aimbot Radius", 0,1000,Settings.Aimbot.FOV,false, function(Value)
+local Slider2 = Section1:CreateSlider("Aimbot Radius", 0,1000,Settings.Aimbot.FOV,false, function(Value) -- BU BİR SLİDER KAYDIRAK ŞEKLİNDE SAYILARA DEĞER VERİYORSUN!
     Settings.Aimbot.FOV = Value
     Circle.Radius = Settings.Aimbot.FOV 
 end)
 
-local Toggle1 = Section1:CreateToggle("Circle Visible", Settings.Visible, function(State)
+local Toggle1 = Section1:CreateToggle("Circle Visible", Settings.Visible, function(State) -- TOGGLE
    Circle.Visible = State
 end)
 
-local Colorpicker3 = Section1:CreateColorpicker("Circle Color", function(Color)
+local Colorpicker3 = Section1:CreateColorpicker("Circle Color", function(Color) -- BU FOV İÇİN RENK SEÇİMİ
     Circle.Color = Color
     Circle.Color = Settings.Color
 end)
 
 
-local Toggle1 = Section1:CreateToggle("SilentAim", Settings.SilentAim, function(State)
+local Toggle1 = Section1:CreateToggle("SilentAim", Settings.SilentAim, function(State) -- SİLENT AİM İÇİN TOGGLE
 Settings.SilentAim = State
 local Players = Players
 local LocalPlayer = Player
@@ -421,36 +421,36 @@ end)
 end)
 
 
-local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/Karrot-Esp"))()
+local ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/1201for/V.G-Hub/main/Karrot-Esp"))() -- ESPNİN GELDİĞİ HAZIR KOD
 
-local Toggle1 = Section1:CreateToggle("Enable Esp", Settings.Esp, function(State)
+local Toggle1 = Section1:CreateToggle("Enable Esp", Settings.Esp, function(State) -- ESPYİ AKTİFLEŞTİREN TOGGLE
     Settings.Esp = State
     ESP:Toggle(Settings.Esp)
     
 end)
 
-local Toggle1 = Section1:CreateToggle("PLayer Esp", Settings.PlayerEsp, function(State)
+local Toggle1 = Section1:CreateToggle("PLayer Esp", Settings.PlayerEsp, function(State) -- OYUNDAKİ PLAYERLARI GÖSTEREN
     Settings.PlayerEsp = State
     ESP.Players = Settings.PlayerEsp
 end)
 
-local Toggle1 = Section1:CreateToggle("Tracers Esp", Settings.Tracers, function(State)
+local Toggle1 = Section1:CreateToggle("Tracers Esp", Settings.Tracers, function(State) -- ÇİZGİ ÇIKARAN
     Settings.Tracers = State
     ESP.Tracers = Settings.Tracers
 end)
 
-local Toggle1 = Section1:CreateToggle("Name Esp", Settings.EspNames, function(State)
+local Toggle1 = Section1:CreateToggle("Name Esp", Settings.EspNames, function(State) -- ADLARINI GÖSTEREN
     ESP.Names = Settings.EspNames
     Settings.EspNames = State
 end)
 
-local Toggle1 = Section1:CreateToggle("Boxes Esp", Settings.Boxes, function(State)
+local Toggle1 = Section1:CreateToggle("Boxes Esp", Settings.Boxes, function(State) -- KUTU GİBİ ŞEYİN İÇİNE ALAN
     Settings.Boxes = State
     ESP.Boxes = Settings.Boxes
 end)
 
 
-local Toggle1 = Section1:CreateToggle("BHop", Settings.BHop, function(State)
+local Toggle1 = Section1:CreateToggle("BHop", Settings.BHop, function(State) -- BUNNY HOP TOGGLE
 Settings.BHop = State
 spawn(function()
 while wait() and Settings.BHop do
@@ -461,7 +461,7 @@ end)
 
 
 
-local Toggle1 = Section1:CreateToggle("RainBow Gun", Settings.RainBowGun, function(State)
+local Toggle1 = Section1:CreateToggle("RainBow Gun", Settings.RainBowGun, function(State) -- SİLAHI RENGARENK YAPAN TOGGLE
 Settings.RainBowGun = State
 
 RunService.RenderStepped:Connect(
@@ -478,7 +478,7 @@ RunService.RenderStepped:Connect(
     end
 )
 end)
-local Toggle1 = Section1:CreateToggle("Auto Heal", Settings.AutoHeal, function(State)
+local Toggle1 = Section1:CreateToggle("Auto Heal", Settings.AutoHeal, function(State) -- OTOMATİK CAN VEREN TOGGLE
 Settings.AutoHeal = State
 spawn(function()
 while Settings.AutoHeal do
@@ -496,7 +496,7 @@ end
 end)
 end)
 
-local Toggle1 = Section2:CreateToggle("Infinite Ammo", Settings.Infinite, function(State)
+local Toggle1 = Section2:CreateToggle("Infinite Ammo", Settings.Infinite, function(State) -- SINIRSIZ MERMİ
 Settings.Infinite = State
 RunService.Stepped:connect(
     function()
@@ -525,7 +525,7 @@ for _, v in pairs(ReplicatedStorage.Weapons:GetDescendants()) do
 end
 end)
 
-local Toggle1 = Section2:CreateToggle("FastFire Rate", Settings.FireRate, function(State)
+local Toggle1 = Section2:CreateToggle("FastFire Rate", Settings.FireRate, function(State) -- HIZLI SIKMANA YARAYAN
 Settings.FireRate = State
 for _, v in pairs(ReplicatedStorage.Weapons:GetDescendants()) do
     if v.Name == "FireRate" then
@@ -538,7 +538,7 @@ for _, v in pairs(ReplicatedStorage.Weapons:GetDescendants()) do
 end
 end)
 
-local Toggle1 = Section2:CreateToggle("NoRecoil/Spread", Settings.Recoil, function(State)
+local Toggle1 = Section2:CreateToggle("NoRecoil/Spread", Settings.Recoil, function(State) -- SEKMEYİ YOK EDEN TOGGLE
 Settings.Recoil = State
 for i, v in pairs(ReplicatedStorage.Weapons:GetDescendants()) do
     if v.Name == "MaxSpread" or v.Name == "Spread" or v.Name == "RecoilControl" then
@@ -551,7 +551,7 @@ for i, v in pairs(ReplicatedStorage.Weapons:GetDescendants()) do
 end
 end)
 
-local Toggle1 = Section1:CreateToggle("Anti Aim", nil, function(State)
+local Toggle1 = Section1:CreateToggle("Anti Aim", nil, function(State) -- BAŞKALARI SANA SIKMASIN DİYE
 Settings.AntiAim = State
 spawn(
     function()
