@@ -1,5 +1,5 @@
 getgenv().Games = {
-    [286090429] = "https://raw.githubusercontent.com/1201for/V.G-Hub/main/Asrenl",
+    [286090429] = "https://raw.githubusercontent.com/RXPERM/Script/main/arsenal",
 }
 
 getgenv().Unknown = {
