@@ -347,7 +347,7 @@ do
                     BackgroundColor3 = Theme.BackgroundColor,
                     BorderSizePixel = 0,
                     Position = UDim2.new(0, 250, 1, -30),
-                    Size = UDim2.new(0, 300, 0, 50),
+                    Size = UDim2.new(0, 200, 0, 50),
                     BackgroundTransparency = NotificationTransparency,
                     AnchorPoint = Vector2.new(1, 1)
                 }, {
@@ -412,7 +412,7 @@ do
                             PreviousSizes = PreviousSizes + AbsoluteY
                         end
                     end
-                    Holder.Position = UDim2.new(1, 300, 1, -30 - PreviousSizes)
+                    Holder.Position = UDim2.new(1, 200, 1, -30 - PreviousSizes)
                     Utility:Tween(Holder, {Position = UDim2.new(1, -30, 1, -30 - PreviousSizes)}, 0.5)
                 else
                     Utility:Tween(Holder, {Position = UDim2.new(1, -30, 1, -30)}, 0.5)
