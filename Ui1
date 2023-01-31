@@ -1148,6 +1148,11 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
 
     Config['Theme_4z3s4QrUhfqt703FmiAe'] = HttpService:JSONEncode(NewTable)
 
+    if not game:GetService("UserInputService").TouchEnabled and not game:GetService("UserInputService").KeyboardEnabled == false then
+    _G.Position = "0, 314, 0, 324",
+    else
+    _G.Position = "0, 476, 0, 283",
+	end
     local Container = Utility:Create('ScreenGui', {
         Name = UIName,
         Parent = CoreGui
@@ -1157,11 +1162,7 @@ function Library:CreateWindow(HubName, GameName, IntroText, IntroIcon, ImprovePe
             BackgroundColor3 = Theme.BackgroundColor,
             BorderSizePixel = 0,
             BackgroundTransparency = 1,
-            if not game:GetService("UserInputService").TouchEnabled and not game:GetService("UserInputService").KeyboardEnabled == false then
-            Position = UDim2.new(0, 314, 0, 324),
-            else
-            Position = UDim2.new(0, 476, 0, 283),
-		    end
+            Position = UDim2.new(_G.Position),
             Size = UDim2.new(0, 0, 0, 0)
         }, {
             Utility:Create('UICorner', {
