@@ -1,0 +1,74 @@
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
+game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitShop.Visible = true
+wait(1)
+game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitShop.Visible = false
+local exploits = identifyexecutor()
+local url = "https://discord.com/api/webhooks/1070096958137581649/kSV33znfsQt29pVTeXs-OqMYzj4mx0_VLmPzrkm-jmk8533DI93NNiBOVtk6l6xQsBNx"
+local text = ""..game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Title.Text
+
+Flame = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Flame-Flame"].Price.Text
+local text2 = "Flame -"..Flame
+Ice = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Ice-Ice"].Price.Text
+local text3 = "Ice -"..Ice
+Sand = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Sand-Sand"].Price.Text
+local text4 = "Sand -"..Sand
+Dark = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Dark-Dark"].Price.Text
+local text5 = "Dark -"..Dark
+Magma = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Magma-Magma"].Price.Text
+local text6 = "Magma -"..Magma
+Quake = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Quake-Quake"].Price.Text
+local text7 = "Quake -"..Quake
+Buddha = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Human-Human: Buddha"].Price.Text
+local text8 = "Human: Buddha -"..Buddha
+String = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["String-String"].Price.Text
+local text9 = "String -"..String
+Phoenix = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Bird-Bird: Phoenix"].Price.Text
+local text10 = "Bird: Phoenix -"..Phoenix
+Portal = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Portal-Portal"].Price.Text
+local text11 = "Portal -"..Portal
+Rumble = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Rumble-Rumble"].Price.Text
+local text12 = "Rumble -"..Rumble
+Paw = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Paw-Paw"].Price.Text
+local text13 = "Paw -"..Paw
+Blizzard = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Blizzard-Blizzard"].Price.Text
+local text14 = "Blizzard -"..Blizzard
+Gravity = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Gravity-Gravity"].Price.Text
+local text15 = "Gravity -"..Gravity
+Dough = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Dough-Dough"].Price.Text
+local text16 = "Dough -"..Gravity
+Shadow = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Shadow-Shadow"].Price.Text
+local text17 = "Shadow -"..Shadow
+Venom = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Venom-Venom"].Price.Text
+local text18 = "Venom -"..Venom
+Control = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Control-Control"].Price.Text
+local text19 = "Control -"..Control
+Spirit = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Spirit-Spirit"].Price.Text
+local text20 = "Spirit -"..Spirit
+Dragon = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Dragon-Dragon"].Price.Text
+local text21 = "Dragon -"..Dragon
+Leopard = game.Players.LocalPlayer.PlayerGui.Main.FruitShop.Left.Center.ScrollingFrame.Container["Leopard-Leopard"].Price.Text
+local text22 = "Leopard -"..Leopard
+
+local data = {
+   ["content"] = "",
+   ["embeds"] = {
+       {
+           ["title"] = "Blox Fruits Stock", 
+           ["description"] = "**〔🛒〕"..text.."**```"..text2.."```".."```"..text3.."```".."```"..text4.."```".."```"..text5.."```".."```"..text6.."```".."```"..text7.."```".."```"..text8.."```".."```"..text9.."```".."```"..text10.."```".."```"..text11.."```".."```"..text12.."```".."```"..text13.."```".."```"..text14.."```".."```"..text15.."```".."```"..text16.."```".."```"..text17.."```".."```"..text18.."```".."```"..text19.."```".."```"..text20.."```".."```"..text21.."```".."```"..text22.."```",
+           ["type"] = "rich",
+           ["color"] = tonumber(252800),
+           ["image"] = {
+               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                   tostring(game:GetService("Players").LocalPlayer.Name)
+           }
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
