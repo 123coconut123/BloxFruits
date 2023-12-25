@@ -1,7 +1,0 @@
-getgenv().Games = {
-    [756858] = ""
-}
-
-getgenv().Unknown = {
-    [75680] = ""
-}
